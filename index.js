@@ -3,6 +3,8 @@ import cors from 'cors';
 import { Holidays } from './Holidays.js';
 import { IsToday } from './IsToday.js';
 
+const port = process.env.PORT || 5000;
+
 const app = express();
 app.use(cors());
 
@@ -14,4 +16,4 @@ app.get('/is-today-holiday', (request, response) => {
     response.send(IsToday());
 });
 
-app.listen(5000);
+app.listen(port);
